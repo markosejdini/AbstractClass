@@ -1,5 +1,34 @@
-public class SearchTree {
+public class SearchTree implements NodeList {
 
+    ListItem root ;
+
+    public SearchTree(ListItem root) {
+        this.root = root;
+    }
+
+    @Override
+    public ListItem getRoot() {
+        return null;
+    }
+
+    @Override
+    public boolean addItem(ListItem item) {
+        return false;
+    }
+
+    @Override
+    public boolean removeItem(ListItem item) {
+        return false;
+    }
+
+    @Override
+    public void traverse(ListItem root) {
+
+    }
+
+    private void performRemoval (ListItem toRemove, ListItem parent) {
+
+    }
     /*     -  It implements NodeList.
 
     -  It has one field of type ListItem called root.

@@ -1,6 +1,31 @@
-public class MyLinkedList {
+public class MyLinkedList implements NodeList {
 
-    /*   -  It implements NodeList.
+    ListItem root;
+
+    public MyLinkedList(ListItem root) {
+        this.root = root;
+    }
+
+    @Override
+    public ListItem getRoot() {
+        return null;
+    }
+
+    @Override
+    public boolean addItem(ListItem item) {
+        return false;
+    }
+
+    @Override
+    public boolean removeItem(ListItem item) {
+        return false;
+    }
+
+    @Override
+    public void traverse(ListItem root) {
+
+    }
+/*   -  It implements NodeList.
 
     -  It has one field of type ListItem called root.
 

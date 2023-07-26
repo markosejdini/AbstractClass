@@ -1,6 +1,12 @@
 public class MyLinkedList implements NodeList {
+    /*   -  It implements NodeList.
 
+        -  It has one field of type ListItem called root.
+
+        -  A constructor that takes a ListItem and initialises the field root with the newly
+         passed in parameter. */
     ListItem root;
+
 
     public MyLinkedList(ListItem root) {
         this.root = root;
@@ -8,12 +14,39 @@ public class MyLinkedList implements NodeList {
 
     @Override
     public ListItem getRoot() {
-        return null;
+        return this.root;
     }
 
     @Override
-    public boolean addItem(ListItem item) {
+    public boolean addItem(ListItem newItem) {
+        if(this.root== null) { this.root=newItem; }
+        ListItem currentItem = root;
+        while (currentItem != null) {
+            int comparison = currentItem.compareTo(newItem);
+            if (comparison < 0) {
+                if (currentItem.next() != null) {
+                    currentItem = currentItem.next();
+                } else {
+                    currentItem.setNext(newItem);
+                    return true;
+                }
+            } else if (comparison > 0) {
+                if (currentItem.previous() != null) {
+                    currentItem = currentItem.previous();
+                } else {
+                    currentItem.setPrevious(newItem);
+                    return true;
+                }
+            } else {
+                // Duplicate items are not allowed
+                return false;
+            }
+        }
         return false;
+
+
+
+
     }
 
     @Override
@@ -25,12 +58,7 @@ public class MyLinkedList implements NodeList {
     public void traverse(ListItem root) {
 
     }
-/*   -  It implements NodeList.
 
-    -  It has one field of type ListItem called root.
-
-    -  A constructor that takes a ListItem and initialises the field root with the newly
-     passed in parameter. */
 
 
 

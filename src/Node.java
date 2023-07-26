@@ -5,28 +5,40 @@ public class Node extends ListItem {
 
     @Override
     ListItem next() {
-        return null;
+        return rightLink;
     }
 
     @Override
     ListItem setNext(ListItem item) {
-        return null;
+        return this.rightLink = item;
     }
 
     @Override
     ListItem previous() {
-        return null;
+        return this.leftLink;
     }
 
     @Override
     ListItem setPrevious(ListItem item) {
-        return null;
+        return this.leftLink = item;
     }
+
+
+    /* -  compareTo(), takes a ListItem and compares it to the ListItem that called this method. Use
+         value from ListItem for comparison. If this value is greater than the value that was passed in,
+         then it should return a number greater than zero. If vice versa, then it should return a number
+         less than zero, and zero if equal.  */
 
     @Override
     int compareTo(ListItem item) {
-        return 0;
+
+        if (item != null) {
+            return ((String) super.getValue()).compareTo((String) item.getValue());
+        } else {
+            return -1;
+        }
     }
+}
 
     /*  -  It extends ListItem.
 
@@ -45,11 +57,8 @@ public class Node extends ListItem {
 
         -  setPrevious(), takes a ListItem and sets it as its leftLink, then it returns leftLink.
 
-        -  compareTo(), takes a ListItem and compares it to the ListItem that called this method. Use
-         value from ListItem for comparison. If this value is greater than the value that was passed in,
-         then it should return a number greater than zero. If vice versa, then it should return a number
-         less than zero, and zero if equal. */
+        */
 
 
 
-}
+
